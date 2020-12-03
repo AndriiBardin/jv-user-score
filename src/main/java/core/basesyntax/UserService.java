@@ -7,8 +7,7 @@ public class UserService {
     public int getUserScore(String[] records, String email) throws UserNotFoundException {
         for (String mixedInfo: records) {
             String[] sortedInfo = mixedInfo.split(":");
-            if (sortedInfo.length == 2 && sortedInfo[0].equals(email)
-                    && Integer.parseInt(sortedInfo[1]) > 0) {
+            if (sortedInfo.length == 2 && sortedInfo[0].equals(email)) {
                 return Integer.parseInt(sortedInfo[1]);
             }
         }
